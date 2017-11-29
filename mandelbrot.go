@@ -74,9 +74,10 @@ func setColor(m *image.RGBA, px, py, maxi int, zoom float32) {
 
 		i++
 	}
-
-	m.Set(px, py, color.RGBA{min( uint8(510*i/maxi),255),0,0,255})
-}
+	if i == maxi {m.Set(px, py, color.RGBA{255,255,255,255})
+}else{
+	m.Set(px, py, color.RGBA{min( uint8(2040*i/maxi),255),0,0,255})}
+	}
 func min(x,y uint8) uint8{
 	if x<y {return x}
 	return y
@@ -84,7 +85,7 @@ func min(x,y uint8) uint8{
 }
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
-	m := mandelbrot(10000, 5000, 3000, 1.0, 50)
+	m := mandelbrot(3600, 1800, 3000, 1.0, 50)
 
 	w, _ := os.Create("mandelbrot.png")
 	defer w.Close()
