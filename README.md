@@ -1,2 +1,2 @@
 # goLangProjects
-a repositorry for general Go projects
+a repository for general Go projects
