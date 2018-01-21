@@ -31,7 +31,4 @@ func main(){
 	go ping(ch,ch2,&counter)
 	go pong(ch2,done,&counter) 
 	<-done
-}
-	if counter > 100 {os.Exit(0)}
-
 	}
